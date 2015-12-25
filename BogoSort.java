@@ -10,7 +10,7 @@
 
 import java.util.ArrayList;
 
-public class BubbleSort {
+public class BogoSort {
 
     //~~~~~~~~~~~~~~~~~~~ HELPER METHODS ~~~~~~~~~~~~~~~~~~~
     //precond: lo < hi && size > 0
@@ -50,6 +50,7 @@ public class BubbleSort {
 	//counter cut the camparisons by half
 	boolean done = false;
 	while (!done){
+	    shuffle(data);
 	    for (int i = 0; i < data.size() - 1; i ++){
 		if (data.get(i).compareTo(data.get(i+1)) > 0){
 		    done = false;
@@ -57,7 +58,6 @@ public class BubbleSort {
 		}
 	    done = true;
 	    }
-	    shuffle(data);
 	}
     }//end bubbleSortV -- O(?)
 
@@ -65,7 +65,7 @@ public class BubbleSort {
     // ArrayList-returning bubbleSort
     // postcondition: order of input ArrayList's elements unchanged
     //                Returns sorted copy of input ArrayList.
-    public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input ){
+    public static ArrayList<Comparable> bogoSort( ArrayList<Comparable> input ){
         ArrayList<Comparable> ans = new ArrayList<Comparable>(input.size());
 	for (Comparable a: input){
 	    ans.add(a);
@@ -99,14 +99,14 @@ public class BubbleSort {
 	glen.add(12);
 	glen.add(3);
 	System.out.println( "ArrayList glen before sorting:\n" + glen );
-	ArrayList glenSorted = bubbleSort( glen );
+	ArrayList glenSorted = bogoSort( glen );
 	System.out.println( "sorted version of ArrayList glen:\n" 
 			    + glenSorted );
 	System.out.println( "ArrayList glen after sorting:\n" + glen );
 
       	ArrayList coco = populate( 10, 1, 1000 );
 	System.out.println( "ArrayList coco before sorting:\n" + coco );
-	ArrayList cocoSorted = bubbleSort( coco );
+	ArrayList cocoSorted = bogoSort( coco );
 	System.out.println( "sorted version of ArrayList coco:\n" 
 			    + cocoSorted );
 	System.out.println( "ArrayList coco after sorting:\n" + coco );
