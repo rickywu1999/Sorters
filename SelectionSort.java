@@ -49,11 +49,13 @@ public class SelectionSort {
 	Comparable target;
 	while (count < data.size()-1){
 	    index = count;
+	    //this loops through and finds the smallest value
 	    for (int a = count; a < data.size();a++){
 		if (data.get(a).compareTo(data.get(index)) < 0){
 		    index = a;
 		}
 	    }
+	    //this switches the smallest number with the current count
 	    target = data.get(index);
 	    data.set(index,data.get(count));
 	    data.set(count,target);

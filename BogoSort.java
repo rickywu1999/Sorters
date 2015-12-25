@@ -49,13 +49,18 @@ public class BogoSort {
     public static void bogoSortV( ArrayList<Comparable> data ) {
 	//counter cut the camparisons by half
 	boolean done = false;
+	//checks if list is in order
 	while (!done){
+	    //data is shuffled
 	    shuffle(data);
+	    //checks if data is in order
 	    for (int i = 0; i < data.size() - 1; i ++){
 		if (data.get(i).compareTo(data.get(i+1)) > 0){
 		    done = false;
+		    //breaks the loop so that done is not set to true
 		    break;
 		}
+	    //if everything works, done will be set to true and the loop will end
 	    done = true;
 	    }
 	}

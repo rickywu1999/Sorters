@@ -49,15 +49,17 @@ public class BubbleSort {
     public static void bubbleSortV( ArrayList<Comparable> data ) {
 	//counter cut the camparisons by half
 	int ctr = 0;
+	//loops through only data.size() - 1 times, which ensures that every element is sorted
 	while (ctr < data.size()-1){
+	    //loops through entire list
 	    for (int x = data.size() - 1; x > ctr ; x--){
+		//switches the number with the number after it if conditions are meet
 		if (data.get(x).compareTo(data.get(x-1)) < 0){
 		    Comparable save = data.get(x);
 		    data.set(x,data.get(x-1));
 		    data.set(x-1,save);
 		}
 	    }
-	    System.out.println(data);
 	    ctr++;
 	}
     }//end bubbleSortV -- O(?)
